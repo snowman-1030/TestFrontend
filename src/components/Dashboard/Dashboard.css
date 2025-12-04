@@ -1,0 +1,73 @@
+.dashboard {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-content {
+  display: flex;
+  flex: 1;
+  margin-top: 70px;
+  transition: all 0.3s ease;
+}
+
+.main-content {
+  flex: 1;
+  padding: 30px;
+  overflow-x: auto;
+  transition: margin-left 0.3s ease;
+}
+
+.main-content .employee-detail-container {
+  padding: 0;
+  margin: -30px;
+}
+
+@media (min-width: 769px) {
+  .dashboard-content.sidebar-open .main-content {
+    margin-left: 280px;
+  }
+  
+  .dashboard-content:not(.sidebar-open) .main-content {
+    margin-left: 0;
+  }
+}
+
+.view-toggle {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  justify-content: flex-end;
+}
+
+.toggle-btn {
+  padding: 10px 20px;
+  border: 2px solid #667eea;
+  background: white;
+  color: #667eea;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.toggle-btn:hover {
+  background: #f0f0ff;
+}
+
+.toggle-btn.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: transparent;
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 20px;
+  }
+  
+  .view-toggle {
+    justify-content: center;
+  }
+}
+
